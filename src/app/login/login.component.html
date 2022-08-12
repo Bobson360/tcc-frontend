@@ -6,32 +6,33 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9 col-lg-8 mx-auto">
-              <h3 class="login-heading mb-4">Bem vindo de Volta</h3>
-
-              <!-- Sign In Form -->
-              <form>
-                <div class="form-floating mb-3">
-                  <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-                  <label for="floatingInput">Email</label>
-                </div>
-                <div class="form-floating mb-3">
-                  <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-                  <label for="floatingPassword">Senha</label>
-                </div>
-
-                <div class="form-check mb-3">
-                  <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-                  <label class="form-check-label" for="rememberPasswordCheck">
-                    Lembrar senha
-                  </label>
-                </div>
-
-                <div class="d-grid">
-                  <button class="btn btn-lg btn-primary btn-login text-uppercase fw-bold mb-2" type="submit">Entrar</button>
-                  <div class="text-center">
-                    <a class="small" href="#">Esqueceu a senha?</a>
-                  </div>
-                </div>
+                <form [formGroup]="signin" novalidate (ngSubmit)="onSubmit()">
+                <mat-card class="shipping-card">
+                  <mat-card-header>
+                    <mat-card-title>Entrar no Sistema</mat-card-title>
+                  </mat-card-header>
+                  <mat-card-content>
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="full-width">
+                          <input matInput placeholder="Email" formControlName="email">
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col">
+                        <mat-form-field class="full-width">
+                          <input matInput placeholder="Senha" formControlName="password" [type]="hide ? 'password' : 'text'" >
+                          <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                          <mat-hint *ngIf="!passwordInput?.value">Digite sua senha de acesso</mat-hint>
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </mat-card-content>
+                  <mat-card-actions>
+                    <button mat-raised-button color="accent" type="submit">Entrar</button>
+                  </mat-card-actions>
+                </mat-card>
               </form>
             </div>
           </div>

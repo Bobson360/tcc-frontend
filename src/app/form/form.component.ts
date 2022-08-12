@@ -8,7 +8,8 @@ import { FormBuilder, Validators } from '@angular/forms';
 })
 export class FormComponent {
   addressForm = this.fb.group({
-    company: null,
+    email: [null, Validators.required],
+    password: [null, Validators.required],
     firstName: [null, Validators.required],
     lastName: [null, Validators.required],
     address: [null, Validators.required],
