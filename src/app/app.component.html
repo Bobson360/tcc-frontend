@@ -2,5 +2,17 @@
 <!-- <app-nav></app-nav> -->
 <!-- <app-dashboard></app-dashboard> -->
 <!-- <app-form></app-form> -->
+<!-- <app-navigation></app-navigation> -->
 
-<router-outlet></router-outlet>
+<div fxLayout="column" fxFlexFill>
+    <app-navigation></app-navigation>
+    <div fxFlex>
+        <router-outlet></router-outlet> 
+    </div>
+    <app-footer></app-footer> 
+</div>
+<div id="wrapper">
+    <footer id="rodape">
+    <p>&copy; Cistech - Soluções tecnologicas para monitoramento de cisternas</p>
+  </footer>
+</div>
