@@ -18,9 +18,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatMenuModule } from '@angular/material/menu';
+import { AboutComponent } from './about/about.component';
+import { NavigationComponent } from './navigation/navigation.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { MatMenuModule } from '@angular/material/menu';
     LoginComponent,
     FormComponent,
     NavComponent,
-    DashboardComponent
+    AboutComponent,
+    NavigationComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,

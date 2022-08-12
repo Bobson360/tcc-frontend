@@ -1,0 +1,5 @@
+<div class="grid-container">
+  <mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile *ngFor="let card of cards | async" [colspan]="card.cols" [rowspan]="card.rows">{{card.title}}</mat-grid-tile>
+  </mat-grid-list>
+</div>
